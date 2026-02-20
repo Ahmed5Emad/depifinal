@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import { CheckIcon } from "lucide-react";
 import './HeroSection.css';
 import { ButtonGroup } from "@/components/ui/ButtonGroup";
+import { useNavigate } from "react-router-dom";
 
 
 export function HeroSection() {
+  const navigate = useNavigate();
   return (
     <div className='w-full flex flex-row px-32'>
     <div className="flex mb-4 flex-col w-1/2 justify-center gap-2">
@@ -36,7 +38,7 @@ export function HeroSection() {
         </ul>
       </p>
       <div className="flex my-6 gap-2">
-        <Button size="lg" className="w-1/2 shadow-2xl font-bold text-1xl">
+        <Button size="lg" className="w-1/2 shadow-2xl font-bold text-1xl" onClick={() => navigate("/signup")}>
           Get Started
         </Button> 
         <p className="font-light text-gray-500 text-sm">free forever<br/> no credit card.</p>
